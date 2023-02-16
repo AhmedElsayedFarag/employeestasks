@@ -1,0 +1,81 @@
+/*================================================================================
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+	Version: 2.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+.tippy-popper{
+    display: none;
+}
+.main-menu .navbar-header .navbar-brand .brand-logo{
+    background: unset;
+    width: 12rem;
+}
+.main-menu .navbar-header{
+    height: 11rem;
+}
+.btn-primary{
+    border-color: #3EB453 !important;
+    background-color: #3EB453 !important;
+}
+body.dark-layout .pagination:not([class*="pagination-"]) .page-item.active .page-link {
+    background-color: #3EB453;
+}
+.badge.badge-primary {
+    background-color: #3EB453;
+}
+.main-menu.menu-light .navigation > li.active > a {
+    background: linear-gradient(
+        118deg
+        , #3EB453, rgba(62, 180, 83, 0.7));
+    box-shadow: 0 0 10px 1px rgb(62 180 83 / 70%);
+
+}
+a {
+    color: #3EB453;
+}
+.form-control:focus {
+    border-color: #3EB453;
+}
+.form-label-group > input:focus:not(:placeholder-shown) ~ label, .form-label-group > input:not(:active):not(:placeholder-shown) ~ label, .form-label-group textarea:focus:not(:placeholder-shown) ~ label, .form-label-group textarea:not(:active):not(:placeholder-shown) ~ label {
+    color: #3EB453 !important;
+}
+body.dark-layout input.form-control:focus ~ .form-control-position i, body.dark-layout .custom-file-label:focus ~ .form-control-position i, body.dark-layout textarea.form-control:focus ~ .form-control-position i {
+    color: #3EB453;
+}
+.dropdown-notification .dropdown-menu-header {
+    background: #3EB453;
+}
+.dropdown-notification .dropdown-menu.dropdown-menu-right::before {
+    background: #3EB453;
+    border-color: #3EB453;
+}
+.primary {
+    color: #3EB453 !important;
+}
+#ecommerce-pagination ul{
+    justify-content: center;
+}
+table.dataTable tbody tr.selected,table.dataTable tbody tr.selected td {
+    background-color: rgb(62, 180, 83) !important;
+    box-shadow: 0 0 1px 0 #3EB453 !important;
+    color: #FFFFFF;
+}
+.btn-sm, .btn-group-sm > .btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+@media print {
+   *,h1,h2,h3,h4,h5,h6,p,span,a,div,table,tr,td,th{
+       font-weight: bolder !important;
+       color: #000000 !important;
+   }
+}
+.sidebar_image{
+    width: 30px;
+}
