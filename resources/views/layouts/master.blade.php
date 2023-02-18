@@ -400,7 +400,6 @@
 <!-- END: Page JS-->
 <script src="{{asset('assets/js/scripts.js')}}"></script>
 @yield('script')
-@yield('final_script')
 
 </body>
 <!-- END: Body-->
