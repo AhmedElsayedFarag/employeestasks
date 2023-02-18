@@ -4,7 +4,7 @@
 namespace App\Actions;
 
 
-class SaveFile
+class SaveFile extends Action
 {
     protected $file;
     protected $directory;

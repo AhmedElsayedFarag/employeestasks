@@ -14,29 +14,28 @@ use Spatie\Permission\Models\Role;
 class UserController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('permission:view employees')->only('index');
+        $this->middleware('permission:create employees')->only(['create', 'store']);
+        $this->middleware('permission:update employees')->only(['edit', 'update']);
+        $this->middleware('permission:delete employees')->only('destroy');
+    }
+
     public function index()
     {
-        if (!auth()->user()->can('view employees')) {
-            abort(403);
-        }
         return view('users.index', ['users' => app()->call(new GetUserEmployees())]);
     }
 
 
     public function create()
     {
-        if (!auth()->user()->can('create employees')) {
-            abort(403);
-        }
-        return view('users.create', ['departments' => Department::all(),'roles'=>Role::all()]);
+        return view('users.create', ['departments' => Department::all(), 'roles' => Role::all()]);
     }
 
 
     public function store(CreateRequest $request)
     {
-        if (!auth()->user()->can('create employees')) {
-            abort(403);
-        }
         User::create($request->validated())->assignRole($request->validated('role_id'));
         Session::flash('message', 'Saved Successfully');
         return redirect()->route('users.index');
@@ -57,18 +56,14 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        if (!auth()->user()->can('update employees')) {
-            abort(403);
-        }
-        return view('users.edit', ['user' => $user,'departments' => Department::all()]);
+
+        return view('users.edit', ['user' => $user, 'departments' => Department::all()]);
     }
 
 
     public function update(UpdateRequest $request, User $user)
     {
-        if (!auth()->user()->can('update employees')) {
-            abort(403);
-        }
+
         $user->update($request->validated());
         Session::flash('message', 'Updated Successfully');
         return redirect()->back();
@@ -77,9 +72,7 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        if (!auth()->user()->can('delete employees')) {
-            abort(403);
-        }
+
         User::findOrFail($id)->delete();
         return redirect()->back();
     }

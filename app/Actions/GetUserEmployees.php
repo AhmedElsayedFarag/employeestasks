@@ -6,7 +6,7 @@ namespace App\Actions;
 
 use App\Models\User;
 
-class GetUserEmployees
+class GetUserEmployees extends Action
 {
     public function __invoke()
     {

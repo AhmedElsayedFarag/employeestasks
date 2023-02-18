@@ -34,5 +34,5 @@ Route::middleware('auth')->group(function () {
     Route::resource('tasks', TaskController::class);
 });
 
-
+Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 require __DIR__.'/auth.php';
